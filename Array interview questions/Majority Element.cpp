@@ -46,3 +46,4 @@ int majorityElement(int a[], int size)
     return -1;
 }
 
+//can also solve using count bit at every position
