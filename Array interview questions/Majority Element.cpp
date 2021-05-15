@@ -47,3 +47,5 @@ int majorityElement(int a[], int size)
 }
 
 //can also solve using count bit at every position
+// if count of bit is grater then n/2 
+//then candidate definately have set bit on that position
