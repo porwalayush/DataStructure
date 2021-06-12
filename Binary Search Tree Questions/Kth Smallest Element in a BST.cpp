@@ -11,12 +11,17 @@
  */
 class Solution {
 public:
-    TreeNode* trimBST(TreeNode* root, int low, int high) {
-        if(root==NULL) return NULL;
-        if(root->val<low) return trimBST(root->right,low,high);
-        if(root->val>high) return trimBST(root->left,low,high);
-        root->left=trimBST(root->left,low,high);
-        root->right=trimBST(root->right,low,high);
-        return root;
+    int c=0;
+    int kthSmallest(TreeNode* root, int k) {
+        if(!root) return -1;
+        int l=kthSmallest(root->left,k);
+        if(l!=-1)
+            return l;
+        c++;
+        if(c==k)
+            return root->val;
+        int r=kthSmallest(root->right,k);
+        if(r!=-1) return r;
+        return -1;
     }
 };
